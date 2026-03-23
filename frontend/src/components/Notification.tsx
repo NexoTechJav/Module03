@@ -15,7 +15,7 @@ export default function Notification(props: {
       <div className="notification-header">
         <strong>{title ?? (kind === 'success' ? 'Éxito' : 'Error')}</strong>
         {onClose ? (
-          <button type="button" className="notification-close" onClick={onClose}>
+          <button type="button" className="notification-close" onClick={onClose} aria-label="Cerrar notificación">
             x
           </button>
         ) : null}
