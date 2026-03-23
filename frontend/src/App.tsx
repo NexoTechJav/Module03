@@ -24,7 +24,7 @@ function App() {
                   className="btn primary"
                   onClick={() => setView('addCandidate')}
                 >
-                  Anadir candidato
+                  Añadir candidato
                 </button>
               </div>
             </div>
