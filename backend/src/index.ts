@@ -55,7 +55,7 @@ const upload = multer({
     const isAllowedByMime = allowedCvMimeTypes.has(file.mimetype);
     const isAllowedByExt = allowedCvExtensions.has(ext);
 
-    if (isAllowedByMime || isAllowedByExt) {
+    if (isAllowedByMime && isAllowedByExt) {
       return cb(null, true);
     }
 
