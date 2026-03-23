@@ -86,7 +86,16 @@ input[type='file'] {
   border-radius: 10px;
   border: 1px solid #d7d7e3;
   padding: 10px 12px;
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+input[type='text']:focus-visible,
+input[type='email']:focus-visible,
+input[type='file']:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #2b6cff;
+  outline-offset: 2px;
 }
 
 .field-error {
