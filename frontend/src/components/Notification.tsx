@@ -13,7 +13,7 @@ export default function Notification(props: {
   return (
     <div className={`notification ${kind}`} role="status" aria-live="polite">
       <div className="notification-header">
-        <strong>{title ?? (kind === 'success' ? 'Exito' : 'Error')}</strong>
+        <strong>{title ?? (kind === 'success' ? 'Éxito' : 'Error')}</strong>
         {onClose ? (
           <button type="button" className="notification-close" onClick={onClose}>
             x
