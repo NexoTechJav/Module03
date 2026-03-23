@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import Notification from './Notification';
 
 const BACKEND_URL = 'http://localhost:3010';
@@ -45,6 +45,7 @@ export default function AddCandidateForm(props: { onCancel: () => void }) {
   });
 
   const [cvFile, setCvFile] = useState<File | null>(null);
+  const cvInputRef = useRef<HTMLInputElement | null>(null);
 
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -131,6 +132,9 @@ export default function AddCandidateForm(props: { onCancel: () => void }) {
           workExperience: '',
         });
         setCvFile(null);
+        if (cvInputRef.current) {
+          cvInputRef.current.value = '';
+        }
         return;
       }
 
@@ -286,6 +290,7 @@ export default function AddCandidateForm(props: { onCancel: () => void }) {
               <div className="field formSpan">
                 <label htmlFor="cv">CV (opcional)</label>
                 <input
+                  ref={cvInputRef}
                   id="cv"
                   type="file"
                   accept=".pdf,.docx"
